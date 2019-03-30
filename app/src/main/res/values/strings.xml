@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">DeHoteles</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_hotel_details">HotelDetails</string>
+    <string name="descrp">DoubleTree by Hilton Ocean Pnt Rsrt &amp; Spa North Miami Beach se encuentra en la
+        playa de Miami Sunny Isles Beach línea de playa, cerca de Intracoastal Mall, Aventura Mall y Oleta River State Park.
+        Otros lugares de interés cerca de este hotel spa incluyen Haulover Park Marina y Claustros del monasterio de Saint Bernard de Clairvaux.
+        Características del hotel. DoubleTree by Hilton Ocean Pnt Rsrt &amp; Spa North Miami Beach cuenta con una cafetería / cafetería, un bar junto a la piscina y un bar / salón. Servicio de habitaciones disponible. Este hotel sirve desayuno bufé caliente y frío todas las mañanas en restaurante (de pago). .</string>
+    <string name="mostrar_mas">Mostrar más</string>
+    <string name="mostrar_menos">Mostrar menos</string>
+
+</resources>
