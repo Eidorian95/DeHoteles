@@ -14,16 +14,12 @@ class DescriptionFragment : Fragment() {
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
 
-        val view: View = inflater!!.inflate(R.layout.fragment_description, container,
-            false)
+        val view: View = inflater!!.inflate(R.layout.fragment_description, container, false)
 
-        var description = view.findViewById<TextView>(R.id.tvDescDet) as TextView
+        var description = view.findViewById(R.id.tvDescDet) as TextView
 
         var activityArgs = this.arguments?.getString("DESCRIPTION")
-
-        Log.d("DESCFRAGMENT", activityArgs.toString())
 
         description.text = activityArgs
 

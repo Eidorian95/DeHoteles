@@ -2,6 +2,7 @@ package com.adrianiglesia.dehoteles
 
 import android.content.Intent
 import android.os.Bundle
+import android.support.v4.app.FragmentTransaction
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -9,7 +10,7 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import com.adrianiglesia.dehoteles.RecyclerView.AdaptadorCustom
+import com.adrianiglesia.dehoteles.RecyclerView.MainCustomAdapter
 import com.adrianiglesia.dehoteles.RecyclerView.ClickListener
 import com.adrianiglesia.dehoteles.RecyclerView.LongClickListener
 import com.android.volley.Request
@@ -26,7 +27,7 @@ class MainActivity : AppCompatActivity() {
 
     var layoutManager: RecyclerView.LayoutManager?= null
 
-    var adaptador: AdaptadorCustom? = null
+    var mainAdapter: MainCustomAdapter? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,8 +43,6 @@ class MainActivity : AppCompatActivity() {
 
         layoutManager = LinearLayoutManager(this)
         lista?.layoutManager = layoutManager
-
-
 
     }
 
@@ -67,16 +66,20 @@ class MainActivity : AppCompatActivity() {
         val request = StringRequest(Request.Method.GET, url, Response.Listener<String>{
                 response ->
             val gson = Gson()
-            val hotels = gson.fromJson(response, ListaHoteles::class.java)
-            Log.d("HOTELES", "Cantidad Hoteles: ${hotels.items?.size.toString()}")
+            val hotels = gson.fromJson(response, Hotels::class.java)
+            Log.d("HOTELES", "Cantidad Hoteles: ${hotels.items.size.toString()}")
 
-             adaptador = AdaptadorCustom(hotels.items!!, object: ClickListener {
+             mainAdapter = MainCustomAdapter(hotels.items!!, object: ClickListener {
 
                 override  fun  onClick(vista: View, index:Int){
 
-                    val intent = Intent(applicationContext, HotelDetails::class.java)
+
+
+                    val intent = Intent(applicationContext, DetailActivity::class.java)
                     intent.putExtra("IDHOTEL", hotels.items!!.get(index).id)
                     startActivity(intent)
+
+
 
                 }
             }, object : LongClickListener {
@@ -84,7 +87,8 @@ class MainActivity : AppCompatActivity() {
 
                 }
             })
-            lista?.adapter = adaptador
+            lista?.adapter = mainAdapter
+
         }, Response.ErrorListener {
 
         })

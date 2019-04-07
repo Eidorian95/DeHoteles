@@ -13,8 +13,11 @@
     </string>
     <string name="mostrar_mas">Mostrar más</string>
     <string name="mostrar_menos">Mostrar menos</string>
-
+    <string name="rev_no_info">No informa</string>
+    <string name="no_user">Anonimo</string>
+    <string name="no_rev_hotel">No hay más reseñas para este Hotel</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_maps">Map</string>
 
 </resources>

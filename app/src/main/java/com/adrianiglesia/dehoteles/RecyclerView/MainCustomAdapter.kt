@@ -2,30 +2,27 @@ package com.adrianiglesia.dehoteles.RecyclerView
 
 
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
-import com.adrianiglesia.dehoteles.Hotel
-import com.adrianiglesia.dehoteles.HotelDetail
+import com.adrianiglesia.dehoteles.Hotels
 import com.adrianiglesia.dehoteles.R
 import com.squareup.picasso.Picasso
-import kotlin.collections.ArrayList
 
-class AdaptadorCustom(items: ArrayList<Hotel>?, var listener: ClickListener, var longClickListener: LongClickListener):RecyclerView.Adapter<AdaptadorCustom.ViewHolder> (){
+class MainCustomAdapter(items: List<Hotels.Item>?, var listener: ClickListener, var longClickListener: LongClickListener):RecyclerView.Adapter<MainCustomAdapter.ViewHolder> (){
 
 
-    var items:ArrayList<Hotel>? = null
+    var items:List<Hotels.Item>? = null
 
 
     init {
         this.items = items
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, p1: Int): AdaptadorCustom.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, p1: Int): MainCustomAdapter.ViewHolder {
         val vista = LayoutInflater.from(parent?.context).inflate(R.layout.template_main_layout,parent, false)
 
 
